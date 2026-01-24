@@ -1,21 +1,21 @@
 # short.html#links to strudel
 
-Test 
+test: 
 
 https://einkilometer.github.io/strudel/short.html#strudel
 
-check the source 
+check the source: 
 
 https://github.com/einkilometer/strudel/blob/main/short.html
 
-show it raw 
+show it raw:
 
 https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/short.html
 
-A. Lege eine Datei im Ordner RAW an, die den base64 codierten strudel-content enthält.
+A. Lege eine datei.txt im Ordner RAW an, die den strudel-content aus der Strudel-URL enthält.
 
-B. Verwende die URL der RAW-Ansicht der datei.txt
+B. Verwende die RAW-URL der base64 kodierten datei.txt
 
-   Beispiel: https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/datei.txt
+https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/datei.txt
 
 
