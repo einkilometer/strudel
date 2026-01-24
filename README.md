@@ -1,1 +1,1 @@
-# strudel Bookmarklet based longer shortlinks to strudel
+# Bookmarklet based longer shortlinks to strudel
