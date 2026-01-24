@@ -1,19 +1,40 @@
-Bookmarklet based longer shortlinks to strudel
-# bookmarklet.js
-javascript:(function(){
-  fetch("https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/datei.txt")
-    .then(r=>r.text())
-    .then(c=>window.location="https://strudel.cc/#"+c)
-})();
+#Short links to strudel
 
-// ANLEITUNG:
+short.html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Shortlink Loader</title>
+</head>
+<body>
+<script>
+  // Hash ohne "#"
+  const key = location.hash.slice(1);
 
-// 1. kopiere die URL der RAW-Ansicht der datei.txt
+  // Mapping definieren
+  const links = {
+    "strudel": "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/datei.txt",
+    "test": "https://example.com/test.txt"
+  };
 
-//    Beispiel: https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/datei.txt
+  // Wenn Key existiert → laden
+  if (links[key]) {
+    fetch(links[key])
+      .then(r => r.text())
+      .then(c => location = "https://strudel.cc/#" + c);
+  } else {
+    document.body.innerHTML = "<h1>Unbekannter Shortcut: " + key + "</h1>";
+  }
+</script>
+</body>
+</html>
 
-// 2. Erstelle ein neues Bookmark in deinem Browser
 
-// 3. Benenne es (z.B. "Strudel Bookmarklet")
+0. Lege eine Datei im Ordner RAW an, die den base64 codierten strudel-content enthält.
 
-// 4. Klicke auf das Bookmark, um deinen Strudel-Code zu laden
+1. Verwende die URL der RAW-Ansicht der datei.txt
+
+   Beispiel: https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/datei.txt
+
+
