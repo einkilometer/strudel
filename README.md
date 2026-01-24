@@ -1,5 +1,5 @@
 # short.html#links to strudel
-open https://github.com/einkilometer/strudel/short.html#link
+open https://einkilometer.github.io/strudel/short.html#link
 
 0. Lege eine Datei im Ordner RAW an, die den base64 codierten strudel-content enthält.
 
