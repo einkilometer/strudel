@@ -3,6 +3,9 @@
 test: 
 
 https://einkilometer.github.io/strudel/short.html#strudel
+https://einkilometer.github.io/strudel/short.html#250130
+https://einkilometer.github.io/strudel/short.html#250130-1
+https://einkilometer.github.io/strudel/short.html#250130-2
 
 check the source: 
 
