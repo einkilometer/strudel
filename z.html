@@ -9,8 +9,10 @@
   <script>
     const baseURL = "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/";
     const statusDiv = document.getElementById("status");
+    
     // Hash analysieren (z.B. "#z10" -> "z10")
     const hash = location.hash.slice(1);
+    
     // Hilfsfunktion für zufällige Pause (2-4 Sekunden)
     const wait = () => new Promise(res => setTimeout(res, Math.random() * 2000 + 2000));
 
@@ -19,63 +21,64 @@
       if (!hash || !hash.startsWith('z')) {
         statusDiv.innerHTML = `
           <h1 style='font-family:sans-serif;'>404</h1>      
-          <p><a href="https://github.com/einkilometer/strudel/z.html#z260128">github.com/einkilometer/strudel/z.html#z260128</a><br><br>
+          <p><a href="https://github.com/einkilometer/strudel/z.html#z260128">Beispiel: #z260128</a><br><br>
           <a href="https://github.com/einkilometer/strudel">github.com/einkilometer/strudel</a></p>`;
         return;
       }
+
       // Extrahiere die Zahl aus "z10" -> 10
       let currentNum = parseInt(hash.substring(1), 10);
-      let attempts = 0;
-      const maxAttempts = 10;
-
-      // Falls parseInt fehlschlägt (z.B. wenn nur #z ohne Zahl übergeben wurde)
+      
       if (isNaN(currentNum)) {
-        statusDiv.innerHTML = "<h1 style='color:red;'>Error</h1><p>please alike ...#z10</p>";
+        statusDiv.innerHTML = "<h1 style='color:red;'>Error</h1><p>Bitte verwende ein Format wie #z10</p>";
         return;
       }
 
+      let attempts = 0;
+      const maxAttempts = 10;
+
       while (attempts < maxAttempts) {
         const fileName = `z${currentNum}.txt`;
-        statusDiv.textContent = `looking for ${fileName}...`;
+        statusDiv.textContent = `Suche nach ${fileName}... (Versuch ${attempts + 1}/${maxAttempts})`;
         
         try {
           const response = await fetch(baseURL + fileName);     
           if (response.ok) {
-            // Datei gefunden!
+            // DATEI GEFUNDEN!
             const content = await response.text();
-            statusDiv.textContent = `OK`;
-            location = "https://strudel.cc/#" + encodeURIComponent(content);
+            statusDiv.textContent = `Gefunden! Leite weiter...`;
+            
+            // WICHTIG: Kein encodeURIComponent, da Strudel den Originaltext im Hash braucht
+            location = "https://strudel.cc/#" + content; 
             return; 
-        
           } else {
-            // Datei nicht vorhanden (404)
+            // Datei nicht vorhanden (404) -> Nächste Nummer probieren
             attempts++;
-            if (attempts >= maxAttempts) break;
-            const nextNum = currentNum + 1;
-            const nextFile = `z${nextNum}.txt`;
-            statusDiv.innerHTML = `<br><br><h1>404</h1><p>... search for something alike #z${nextNum}</p>`;
-            await wait();
-            currentNum = nextNum;
+            currentNum++; 
+            
+            if (attempts < maxAttempts) {
+              statusDiv.innerHTML = `Datei nicht gefunden. Warte kurz, dann versuche ich z${currentNum}.txt...`;
+              await wait();
+            }
           }
         } catch (error) {
-          statusDiv.textContent = "Network Error.";
+          statusDiv.textContent = "Netzwerkfehler. Bitte Seite neu laden.";
           return;
         }
       }
 
-      // Wenn 10 Versuche ohne Erfolg waren
-      showRetryButton(currentNum);
+      // Wenn alle 10 Versuche ohne Erfolg waren
+      showRetryButton(currentNum - 1);
     }
 
     function showRetryButton(lastNum) {
       statusDiv.innerHTML = `
         <h1 style="color:red;">404</h1>
-        <p>Retry!</p>
+        <p>Keine passende Datei in den nächsten 10 Nummern gefunden.</p>
         <button id="retryBtn" style="padding: 10px 20px; cursor: pointer; font-size: 16px;">
-          z${lastNum + 1}
+          Suche ab z${lastNum + 1} weiter
         </button>
         <br><br>
-        <a href="https:///einkilometer.github.com/strudel/z.html#z260128">/einkilometer.github.com/strudel/z.html#z260128</a><br>
         <a href="https://github.com/einkilometer/strudel">github.com/einkilometer/strudel</a>
       `;
 
@@ -84,7 +87,7 @@
         location.reload();
       };
     }
-    // Start des Prozesses
+
     startSearch();
   </script>
 </body>
