@@ -22,9 +22,10 @@
       // Fallback, wenn kein Hash vorhanden ist oder er nicht mit 'z' beginnt
       if (!hash || !hash.startsWith('z')) {
         statusDiv.innerHTML = `
-          <h1 style='font-family:sans-serif;'>try ...</h1>      
+          <h1 style='font-family:sans-serif;'>404</h1>      
           <p>
             <a href="https://github.com/einkilometer/strudel/z.html#z260128">github.com/einkilometer/strudel/z.html#z260128</a><br>
+            <br>
             <a href="https://github.com/einkilometer/strudel">github.com/einkilometer/strudel</a>
           </p>`;
         return;
@@ -63,8 +64,8 @@
             const nextFile = `z${nextNum}.txt`;
             
             statusDiv.innerHTML = `
-              <p style="color: red;">${baseURL}${fileName} :-( 404</p>
-              <p><b>${nextFile}</b> trying ... ${attempts}</p>
+              <p>${baseURL}${fileName} not here!</p><br>
+              <p><b>${nextFile}</b> search for something alike ... ${attempts}</p>
             `;
             
             await wait();
