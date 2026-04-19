@@ -2,7 +2,7 @@
 
 examples: 
 
-https://einkilometer.github.io/strudel/z.html#z0
+https://einkilometer.github.io/strudel/z.html#z10
 
 
 
