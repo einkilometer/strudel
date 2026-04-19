@@ -53,9 +53,7 @@
             if (attempts >= maxAttempts) break;
             const nextNum = currentNum + 1;
             const nextFile = `z${nextNum}.txt`;
-            statusDiv.innerHTML = `<p>${baseURL}${fileName}</p><br>
-              <h1>404</h1>
-              <p>... search for something alike #z${nextNum} ... </p>`;
+            statusDiv.innerHTML = `<br><br><h1>404</h1><p>... search for something alike #z${nextNum}</p>`;
             await wait();
             currentNum = nextNum;
           }
