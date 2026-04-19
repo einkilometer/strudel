@@ -1,0 +1,95 @@
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Shortlink Searcher</title>
+</head>
+<body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
+<div id="status"></div>
+
+<script>
+  const baseURL = "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/";
+  const statusDiv = document.getElementById("status");
+  
+  // Hash analysieren (z.B. "#z10" -> "z10")
+  const hash = location.hash.slice(1);
+  
+  // Hilfsfunktion für zufällige Pause (1-2 Sekunden)
+  const wait = () => new Promise(res => setTimeout(res, Math.random() * 1000 + 1000));
+
+  async function startSearch() {
+    if (!hash || !hash.startsWith('z')) {
+      statusDiv.innerHTML = "<h1>Ungültiger Shortcut</h1><p>Bitte nutze ein Format wie #z10</p>";
+      return;
+    }
+
+    // Extrahiere die Zahl aus "z10" -> 10
+    let currentNum = parseInt(hash.substring(1), 10);
+    let attempts = 0;
+    const maxAttempts = 10;
+
+    while (attempts < maxAttempts) {
+      const fileName = `z${currentNum}.txt`;
+      statusDiv.textContent = `Suche nach ${fileName}...`;
+
+      try {
+        const response = await fetch(baseURL + fileName);
+        
+        if (response.ok) {
+          // Datei gefunden!
+          const content = await response.text();
+          statusDiv.textContent = `Gefunden! Leite weiter...`;
+          location = "https://strudel.cc/#" + encodeURIComponent(content);
+          return; // Beendet die Funktion
+        } else {
+          // Datei nicht vorhanden (404)
+          attempts++;
+          if (attempts >= maxAttempts) break;
+
+          const nextNum = currentNum + 1;
+          const nextFile = `z${nextNum}.txt`;
+          
+          statusDiv.innerHTML = `
+            <p style="color: red;">${fileName} nicht vorhanden.</p>
+            <p>Versuche in 1-2 Sekunden <b>${nextFile}</b> zu laden... <br> (Versuch ${attempts}/${maxAttempts})</p>
+          `;
+          
+          await wait();
+          currentNum = nextNum;
+        }
+      } catch (error) {
+        statusDiv.textContent = "Netzwerkfehler beim Abrufen der Datei.";
+        return;
+      }
+    }
+
+    // Wenn wir hier ankommen, wurden 10 Versuche ohne Erfolg abgeschlossen
+    showRetryButton(currentNum);
+  }
+
+  function showRetryButton(lastNum) {
+    statusDiv.innerHTML = `
+      <h1 style="color:red;">Nicht gefunden</h1>
+      <p>Nach 10 Versuchen konnte keine passende Datei gefunden werden.</p>
+      <button id="retryBtn" style="padding: 10px 20px; cursor: pointer; font-size: 16px;">
+        Nächste Datei suchen (ab z${lastNum + 1})
+      </button>
+      <br><br>
+      <a href="https://github.com/einkilometer/strudel">github.com/einkilometer/strudel</a>
+    `;
+
+    document.getElementById("retryBtn").onclick = () => {
+      // Wir simulieren einen neuen Start mit der nächsten Zahl
+      // Da die URL nicht geändert wird, müssen wir die Funktion manuell triggern
+      location.hash = `z${lastNum + 1}`;
+      startSearch(); 
+      // Hinweis: Da location.hash die Seite nicht neu lädt, 
+      // müsste man die Logik leicht anpassen oder einfach die Seite neu laden:
+      location.reload();
+    };
+  }
+
+  // Start des Prozesses
+  startSearch();
+</script>
+</body>
+</html>
