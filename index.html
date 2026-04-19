@@ -1,0 +1,46 @@
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Shortlink Loader</title>
+</head>
+<body style="font-family: sans-serif;">
+<script>
+  const key = location.hash.slice(1);
+  const baseURL = "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/";
+
+  if (key) {
+    fetch(baseURL + key + ".txt")
+      .then(r => {
+        if (!r.ok) throw new Error("Datei nicht gefunden"); 
+        return r.text();
+      })
+      .then(c => {
+        // Die Weiterleitung zu strudel.cc/#... ist sicher, 
+        // da Inhalte nach dem # vom Browser als Fragment behandelt werden.
+        location = "https://strudel.cc/#" + encodeURIComponent(c);
+      })
+      .catch(e => {
+        // SICHERHEITS-FIX: Wir erstellen Elemente und nutzen textContent
+        document.body.innerHTML = ""; // Seite leeren
+        
+        const h1 = document.createElement("h1");
+        h1.style.color = "red";
+        h1.textContent = "Fehler";
+        
+        const p = document.createElement("p");
+        p.textContent = `Die Datei ${key}.txt wurde nicht gefunden.`; // Sicher!
+        
+        const a = document.createElement("a");
+        a.href = "https://github.com/einkilometer/strudel";
+        a.textContent = "github.com/einkilometer/strudel";
+        
+        document.body.appendChild(h1);
+        document.body.appendChild(p);
+        document.body.appendChild(a);
+      });
+  } else {
+    document.body.innerHTML = "<h1 style='font-family:sans-serif;'>Bitte gib einen Shortcut an (z.B. #260124)</h1><br><a href='https://github.com/einkilometer/strudel'>github.com/einkilometer/strudel</a>";
+  }
+</script>
+</body>
+</html>
