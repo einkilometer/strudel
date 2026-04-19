@@ -3,7 +3,7 @@ test:
 
 https://einkilometer.github.io/strudel/s.html#260130
 
-https://einkilometer.github.io/strudel/z.html#260129
+https://einkilometer.github.io/strudel/z.html#z260127
 
 https://einkilometer.github.io/strudel/short.html#260130
 
