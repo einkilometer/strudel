@@ -18,7 +18,7 @@
 
   async function startSearch() {
     if (!hash || !hash.startsWith('z')) {
-      statusDiv.innerHTML = "<h1>Ungültiger Shortcut</h1><p>Bitte nutze ein Format wie #z10</p>";
+      statusDiv.innerHTML = "<h1>Ungültiger Shortcut</h1><p>Bitte schreibe https://einkilometer.github.io/strudel/z.html#z260127#z260128</p>";
       return;
     }
 
@@ -37,7 +37,7 @@
         if (response.ok) {
           // Datei gefunden!
           const content = await response.text();
-          statusDiv.textContent = `Gefunden! Leite weiter...`;
+          statusDiv.textContent = `OK`;
           location = "https://strudel.cc/#" + encodeURIComponent(content);
           return; // Beendet die Funktion
         } else {
@@ -49,8 +49,8 @@
           const nextFile = `z${nextNum}.txt`;
           
           statusDiv.innerHTML = `
-            <p style="color: red;">${fileName} nicht vorhanden.</p>
-            <p>Versuche in 1-2 Sekunden <b>${nextFile}</b> zu laden... <br> (Versuch ${attempts}/${maxAttempts})</p>
+            <p style="color: red;"https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/${fileName} nicht vorhanden.</p>
+            <p> <b>${nextFile}</b> trying <br> ${attempts}/${maxAttempts}</p>
           `;
           
           await wait();
