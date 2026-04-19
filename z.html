@@ -50,7 +50,7 @@
           
           statusDiv.innerHTML = `
             <p style="color: red;"https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/${fileName} :-( 404.</p>
-            <p> <b>${nextFile}</b> trying ... <br> ${attempts}/${maxAttempts}</p>
+            <p> <b>${nextFile}</b> trying ... ${attempts}</p>
           `;
           
           await wait();
@@ -68,7 +68,7 @@
 
   function showRetryButton(lastNum) {
     statusDiv.innerHTML = `
-      <h1 style="color:red;">Nicht gefunden</h1>
+      <h1 style="color:red;">404</h1>
       <p>Retry!</p>
       <button id="retryBtn" style="padding: 10px 20px; cursor: pointer; font-size: 16px;">
         NEXT z${lastNum + 1}
