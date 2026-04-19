@@ -15,7 +15,7 @@
     // Hash analysieren (z.B. "#z10" -> "z10")
     const hash = location.hash.slice(1);
     
-    // Hilfsfunktion für zufällige Pause (1-2 Sekunden)
+    // Hilfsfunktion für zufällige Pause (2-4 Sekunden)
     const wait = () => new Promise(res => setTimeout(res, Math.random() * 2000 + 2000));
 
     async function startSearch() {
@@ -38,7 +38,7 @@
 
       // Falls parseInt fehlschlägt (z.B. wenn nur #z ohne Zahl übergeben wurde)
       if (isNaN(currentNum)) {
-        statusDiv.innerHTML = "<h1 style='color:red;'>Fehler</h1><p>Bitte gib eine Zahl an, z.B. #z10</p>";
+        statusDiv.innerHTML = "<h1 style='color:red;'>Error</h1><p>please alike ...#z10</p>";
         return;
       }
 
@@ -65,6 +65,7 @@
             
             statusDiv.innerHTML = `
               <p>${baseURL}${fileName} not here!</p><br>
+              <h1 style="color:red;">404</h1>
               <p><b>${nextFile}</b> search for something alike ... ${attempts}</p>
             `;
             
