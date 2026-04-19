@@ -30,7 +30,6 @@
           </p>`;
         return;
       }
-
       // Extrahiere die Zahl aus "z10" -> 10
       let currentNum = parseInt(hash.substring(1), 10);
       let attempts = 0;
@@ -45,30 +44,27 @@
       while (attempts < maxAttempts) {
         const fileName = `z${currentNum}.txt`;
         statusDiv.textContent = `looking for ${fileName}...`;
-
+        
         try {
-          const response = await fetch(baseURL + fileName);
-          
+          const response = await fetch(baseURL + fileName);     
           if (response.ok) {
             // Datei gefunden!
             const content = await response.text();
             statusDiv.textContent = `OK`;
             location = "https://strudel.cc/#" + encodeURIComponent(content);
             return; 
+        
           } else {
             // Datei nicht vorhanden (404)
             attempts++;
             if (attempts >= maxAttempts) break;
-
             const nextNum = currentNum + 1;
             const nextFile = `z${nextNum}.txt`;
-            
             statusDiv.innerHTML = `
-              <p>${baseURL}${fileName} not here!</p><br>
+              <p>${baseURL}${fileName}</p><br>
               <h1 style="color:red;">404</h1>
-              <p><b>${nextFile}</b> search for something alike ... ${attempts}</p>
+              <p>... search for something alike ${nextFile} ... ${attempts}</p>
             `;
-            
             await wait();
             currentNum = nextNum;
           }
@@ -99,7 +95,6 @@
         location.reload();
       };
     }
-
     // Start des Prozesses
     startSearch();
   </script>
