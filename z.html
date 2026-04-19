@@ -16,7 +16,7 @@
     const hash = location.hash.slice(1);
     
     // Hilfsfunktion für zufällige Pause (1-2 Sekunden)
-    const wait = () => new Promise(res => setTimeout(res, Math.random() * 1000 + 1000));
+    const wait = () => new Promise(res => setTimeout(res, Math.random() * 2000 + 2000));
 
     async function startSearch() {
       // Fallback, wenn kein Hash vorhanden ist oder er nicht mit 'z' beginnt
