@@ -1,34 +1,36 @@
-<!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
 <meta charset="utf-8">
 <title>Shortlink Loader</title>
 </head>
-<body>
+<body style="font-family: sans-serif;">
 <script>
   // Hash ohne "#"
   const key = location.hash.slice(1);
 
-  // Mapping definieren
+  // Basis-URL für GitHub Raw Dateien
+  const baseURL = "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/";
+
+  // Mapping: Key -> Dateiname
   const links = {
-    "strudel": "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/datei.txt",
-    "260124" : "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/260124.txt",
-    "260125" : "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/260125.txt",
-    "260129" : "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/260129.txt",
-    "260130" : "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/260130.txt",
-    "260130-1" : "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/260130-1.txt",
-    "260130-2" : "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/260130-2.txt",
-    "260207" : "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/260207.txt",
-    "260207-1" : "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/260207-1.txt"
+    "strudel": "datei.txt",
+    "260124" : "260124.txt",
+    "260125" : "260125.txt",
+    "260129" : "260129.txt",
+    "260130" : "260130.txt",
+    "260130-1" : "260130-1.txt",
+    "260130-2" : "260130-2.txt",
+    "260207" : "260207.txt",
+    "260207-1" : "260207-1.txt"
   };
 
-  // Wenn Key existiert → laden
+  // Wenn Key existiert → URL zusammenbauen und laden
   if (links[key]) {
-    fetch(links[key])
+    fetch(baseURL + links[key])
       .then(r => r.text())
       .then(c => location = "https://strudel.cc/#" + c);
   } else {
-    document.body.innerHTML = "<h1>Unbekannter Shortcut: " + key + "</h1> <a href='https://github.com/einkilometer/strudel' > github.com/einkilometer/strudel </a>";
+    document.body.innerHTML = "<h1>Unbekannter Shortcut: " + key + "</h1> <a href='https://github.com/einkilometer/strudel'>github.com/einkilometer/strudel</a>";
   }
 </script>
 </body>
