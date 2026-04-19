@@ -18,7 +18,7 @@
 
   async function startSearch() {
     if (!hash || !hash.startsWith('z')) {
-      statusDiv.innerHTML = "<h1>Shortcut</h1><p>einkilometer.github.io/strudel/z.html#z260127</p>";
+      statusDiv.innerHTML = "<h1 style='font-family:sans-serif;'>Shortcut</h1><p>einkilometer.github.io/strudel/z.html#z260127</p>";
       return;
     }
 
@@ -26,6 +26,12 @@
     let currentNum = parseInt(hash.substring(1), 10);
     let attempts = 0;
     const maxAttempts = 10;
+
+    // Falls parseInt fehlschlägt (z.B. wenn nur #z ohne Zahl übergeben wurde)
+    if (isNaN(currentNum)) {
+      statusDiv.innerHTML = "<h1>Fehler</h1><p>Bitte gib eine Zahl an, z.B. #z10</p>";
+      return;
+    }
 
     while (attempts < maxAttempts) {
       const fileName = `z${currentNum}.txt`;
@@ -39,7 +45,7 @@
           const content = await response.text();
           statusDiv.textContent = `OK`;
           location = "https://strudel.cc/#" + encodeURIComponent(content);
-          return; // Beendet die Funktion
+          return; 
         } else {
           // Datei nicht vorhanden (404)
           attempts++;
@@ -48,9 +54,10 @@
           const nextNum = currentNum + 1;
           const nextFile = `z${nextNum}.txt`;
           
+          // FIX: Anführungszeichen korrigiert und URL-Ausgabe verbessert
           statusDiv.innerHTML = `
-            <p style="color: red;"https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/${fileName} :-( 404.</p>
-            <p> <b>${nextFile}</b> trying ... ${attempts}</p>
+            <p style="color: red;">${baseURL}${fileName} :-( 404</p>
+            <p><b>${nextFile}</b> trying ... ${attempts}</p>
           `;
           
           await wait();
@@ -62,7 +69,7 @@
       }
     }
 
-    // Wenn wir hier ankommen, wurden 10 Versuche ohne Erfolg abgeschlossen
+    // Wenn 10 Versuche ohne Erfolg waren
     showRetryButton(currentNum);
   }
 
@@ -71,20 +78,16 @@
       <h1 style="color:red;">404</h1>
       <p>Retry!</p>
       <button id="retryBtn" style="padding: 10px 20px; cursor: pointer; font-size: 16px;">
-      z${lastNum + 1}
+        z${lastNum + 1}
       </button>
       <br><br>
-       <a href="https://github.com/einkilometer/strudel/z#z260128">github.com/einkilometer/strudel/z.html#z260128</a>
+      <a href="https://github.com/einkilometer/strudel/z.html#z260128">github.com/einkilometer/strudel/z.html#z260128</a><br>
       <a href="https://github.com/einkilometer/strudel">github.com/einkilometer/strudel</a>
     `;
 
     document.getElementById("retryBtn").onclick = () => {
-      // Wir simulieren einen neuen Start mit der nächsten Zahl
-      // Da die URL nicht geändert wird, müssen wir die Funktion manuell triggern
+      // Setzt den Hash für den nächsten Start und lädt die Seite neu
       location.hash = `z${lastNum + 1}`;
-      startSearch(); 
-      // Hinweis: Da location.hash die Seite nicht neu lädt, 
-      // müsste man die Logik leicht anpassen oder einfach die Seite neu laden:
       location.reload();
     };
   }
@@ -92,5 +95,8 @@
   // Start des Prozesses
   startSearch();
 </script>
+</body>
+</html>
+
 </body>
 </html>
