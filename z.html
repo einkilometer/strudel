@@ -18,7 +18,7 @@
 
   async function startSearch() {
     if (!hash || !hash.startsWith('z')) {
-      statusDiv.innerHTML = "<h1>Ungültiger Shortcut</h1><p>Bitte schreibe https://einkilometer.github.io/strudel/z.html#z260127#z260128</p>";
+      statusDiv.innerHTML = "<h1>Shortcut</h1><p> https://einkilometer.github.io/strudel/z.html#z260127#z260128</p>";
       return;
     }
 
@@ -29,7 +29,7 @@
 
     while (attempts < maxAttempts) {
       const fileName = `z${currentNum}.txt`;
-      statusDiv.textContent = `Suche nach ${fileName}...`;
+      statusDiv.textContent = `looking for ${fileName}...`;
 
       try {
         const response = await fetch(baseURL + fileName);
@@ -49,15 +49,15 @@
           const nextFile = `z${nextNum}.txt`;
           
           statusDiv.innerHTML = `
-            <p style="color: red;"https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/${fileName} nicht vorhanden.</p>
-            <p> <b>${nextFile}</b> trying <br> ${attempts}/${maxAttempts}</p>
+            <p style="color: red;"https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/${fileName} :-( 404.</p>
+            <p> <b>${nextFile}</b> trying ... <br> ${attempts}/${maxAttempts}</p>
           `;
           
           await wait();
           currentNum = nextNum;
         }
       } catch (error) {
-        statusDiv.textContent = "Netzwerkfehler beim Abrufen der Datei.";
+        statusDiv.textContent = "Network Error.";
         return;
       }
     }
@@ -69,9 +69,9 @@
   function showRetryButton(lastNum) {
     statusDiv.innerHTML = `
       <h1 style="color:red;">Nicht gefunden</h1>
-      <p>Nach 10 Versuchen konnte keine passende Datei gefunden werden.</p>
+      <p>Retry!</p>
       <button id="retryBtn" style="padding: 10px 20px; cursor: pointer; font-size: 16px;">
-        Nächste Datei suchen (ab z${lastNum + 1})
+        NEXT z${lastNum + 1}
       </button>
       <br><br>
       <a href="https://github.com/einkilometer/strudel">github.com/einkilometer/strudel</a>
