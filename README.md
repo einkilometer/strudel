@@ -1,5 +1,12 @@
 # short.html#links to strudel
-test: 
+
+examples: 
+
+https://einkilometer.github.io/strudel/z.html#z0
+
+
+
+complex:
 
 https://einkilometer.github.io/strudel/s.html#260130
 
