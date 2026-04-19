@@ -2,7 +2,7 @@
 
 test: 
 
-https://einkilometer.github.io/strudel/short.html#strudel
+https://einkilometer.github.io/strudel/s#260130
 
 https://einkilometer.github.io/strudel/short.html#260130
 
@@ -13,6 +13,8 @@ check the source:
 https://github.com/einkilometer/strudel/blob/main/short.html
 
 show it raw:
+
+https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/s
 
 https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/short.html
 
