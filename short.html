@@ -5,32 +5,29 @@
 </head>
 <body style="font-family: sans-serif;">
 <script>
-  // Hash ohne "#"
+  // Hash ohne "#" (das ist der Dateiname ohne Endung)
   const key = location.hash.slice(1);
 
   // Basis-URL für GitHub Raw Dateien
   const baseURL = "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/";
 
-  // Mapping: Key -> Dateiname
-  const links = {
-    "strudel": "datei.txt",
-    "260124" : "260124.txt",
-    "260125" : "260125.txt",
-    "260129" : "260129.txt",
-    "260130" : "260130.txt",
-    "260130-1" : "260130-1.txt",
-    "260130-2" : "260130-2.txt",
-    "260207" : "260207.txt",
-    "260207-1" : "260207-1.txt"
-  };
-
-  // Wenn Key existiert → URL zusammenbauen und laden
-  if (links[key]) {
-    fetch(baseURL + links[key])
-      .then(r => r.text())
-      .then(c => location = "https://strudel.cc/#" + c);
+  if (key) {
+    // Baue die URL: baseURL + key + ".txt"
+    fetch(baseURL + key + ".txt")
+      .then(r => {
+        if (!r.ok) throw new Error("Datei nicht gefunden"); 
+        return r.text();
+      })
+      .then(c => {
+        location = "https://strudel.cc/#" + c;
+      })
+      .catch(e => {
+        // Fehlerbehandlung, falls die Datei auf GitHub nicht existiert
+        document.body.innerHTML = `<h1 style="color:red;">Fehler</h1><p>Die Datei <b>${key}.txt</b> wurde nicht gefunden.</p><a href="https://github.com/einkilometer/strudel">github.com/einkilometer/strudel</a>`;
+      });
   } else {
-    document.body.innerHTML = "<h1>Unbekannter Shortcut: " + key + "</h1> <a href='https://github.com/einkilometer/strudel'>github.com/einkilometer/strudel</a>";
+    // Fallback, wenn gar kein Hash übergeben wurde (z.B. nur index.html aufgerufen)
+    document.body.innerHTML = "<h1>Bitte gib einen Shortcut an (z.B. #260124)</h1><br><a href='https://github.com/einkilometer/strudel'>github.com/einkilometer/strudel</a>";
   }
 </script>
 </body>
