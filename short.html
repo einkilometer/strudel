@@ -19,6 +19,10 @@
         return r.text();
       })
       .then(c => {
+            c = c.trim(); 
+            if (c.includes('#')) {
+            c = c.slice(c.indexOf('#') + 1);
+            }
         location = "https://strudel.cc/#" + c;
       })
       .catch(e => {
