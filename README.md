@@ -6,6 +6,7 @@ https://einkilometer.github.io/strudel/z.html#z10
 
 https://einkilometer.github.io/strudel/z.html#z20
 
+https://einkilometer.github.io/strudel/z.html#z30
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
