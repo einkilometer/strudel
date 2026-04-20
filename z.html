@@ -49,6 +49,10 @@
           if (response.ok) {
             // DATEI GEFUNDEN!
             const content = await response.text();
+            content = content.trim(); 
+            if (content.includes('#')) {
+            content = content.slice(content.indexOf('#') + 1);
+            }
             statusDiv.textContent = `Gefunden! Leite weiter...`;
             location = "https://strudel.cc/#" + content; 
             return; 
