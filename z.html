@@ -48,7 +48,7 @@
           const response = await fetch(baseURL + fileName);     
           if (response.ok) {
             // DATEI GEFUNDEN!
-            const content = await response.text();
+            let content = await response.text();
             content = content.trim(); 
             if (content.includes('#')) {
             content = content.slice(content.indexOf('#') + 1);
