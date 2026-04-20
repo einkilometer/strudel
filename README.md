@@ -1,4 +1,4 @@
-# short.html#links to strudel
+#Links to Strudel.cc
 
 examples: 
 
