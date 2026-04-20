@@ -31,7 +31,7 @@
       let currentNum = parseInt(hash.substring(1), 10);
       
       if (isNaN(currentNum)) {
-        statusDiv.innerHTML = "<h1 style='color:red;'>Error</h1><p>Bitte verwende ein Format wie #z10</p>";
+        statusDiv.innerHTML = " <a href="https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/README.md">README.md</a>";
         return;
       }
 
@@ -48,8 +48,6 @@
             // DATEI GEFUNDEN!
             const content = await response.text();
             statusDiv.textContent = `Gefunden! Leite weiter...`;
-            
-            // WICHTIG: Kein encodeURIComponent, da Strudel den Originaltext im Hash braucht
             location = "https://strudel.cc/#" + content; 
             return; 
           } else {
