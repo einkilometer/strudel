@@ -21,7 +21,6 @@
       if (!hash || !hash.startsWith('z')) {
         statusDiv.innerHTML = `
           <h1 style='font-family:sans-serif;'>404</h1>      
-          <p>https://einkilometer.github.io/strudel/z.html#z10<br><br>
           <a href="https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/README.md">README.md</a>
           `;
         return;
@@ -31,12 +30,13 @@
       let currentNum = parseInt(hash.substring(1), 10);
       
       if (isNaN(currentNum)) {
-        statusDiv.innerHTML = " <a href="https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/README.md">README.md</a>";
+        statusDiv.innerHTML = "<h1 style='font-family:sans-serif;'>404</h1>
+          <a href="https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/README.md">README.md</a>";
         return;
       }
 
       let attempts = 0;
-      const maxAttempts = 10;
+      const maxAttempts = 5;
 
       while (attempts < maxAttempts) {
         const fileName = `z${currentNum}.txt`;
@@ -66,7 +66,7 @@
         }
       }
 
-      // Wenn alle 10 Versuche ohne Erfolg waren
+      // Wenn alle 5 Versuche ohne Erfolg waren
       showRetryButton(currentNum - 1);
     }
 
