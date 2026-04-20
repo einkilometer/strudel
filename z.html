@@ -53,7 +53,9 @@
             if (content.includes('#')) {
             content = content.slice(content.indexOf('#') + 1);
             }
-            statusDiv.textContent = `Gefunden! Leite weiter...`;
+            statusDiv.innerHTML = `Gefunden! Leite weiter...
+                                  <a href="https://einkilometer.github.io/strudel/z.html#z${currentNum}" rel="nofollow">https://einkilometer.github.io/strudel/z.html#z${currentNum}</a>
+				`;
             location = "https://strudel.cc/#" + content; 
             return; 
           } else {
