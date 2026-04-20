@@ -29,8 +29,11 @@ https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/short.htm
 
 
 
+
 Lege Dateien im Ordner RAW an, die eine Strudel-URL oder nur den Base64 codierten Teil der Strudel-URL enthält. 
+
+https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/datei.txt
 
 https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/z10.txt
 
-https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/datei.txt
+https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/z20.txt
