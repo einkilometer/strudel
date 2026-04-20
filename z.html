@@ -53,7 +53,7 @@
             if (content.includes('#')) {
             content = content.slice(content.indexOf('#') + 1);
             }
-            statusDiv.innerHTML = `Gefunden! [Cmd][r] leite weiter...`;
+            statusDiv.textContent = `Gefunden! Leite weiter... [Cmd][r]`;
             location = "https://strudel.cc/#" + content; 
             return; 
           } else {
