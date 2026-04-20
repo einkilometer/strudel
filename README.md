@@ -30,7 +30,7 @@ show it raw:
 
 https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/s.html
 
-https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/short.html
+https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/z.html
 
 https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/short.html
 
