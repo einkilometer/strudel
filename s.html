@@ -15,8 +15,10 @@
         return r.text();
       })
       .then(c => {
-        // Die Weiterleitung zu strudel.cc/#... ist sicher, 
-        // da Inhalte nach dem # vom Browser als Fragment behandelt werden.
+            c = c.trim(); 
+            if (c.includes('#')) {
+            c = c.slice(c.indexOf('#') + 1);
+            }
         location = "https://strudel.cc/#" + encodeURIComponent(c);
       })
       .catch(e => {
