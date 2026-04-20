@@ -62,12 +62,12 @@
             currentNum++; 
             
             if (attempts < maxAttempts) {
-              statusDiv.innerHTML = `Datei nicht gefunden. Warte kurz, dann versuche ich z${currentNum}.txt...`;
+              statusDiv.innerHTML = `... warte kurz, dann versuche ich z${currentNum}...`;
               await wait();
             }
           }
         } catch (error) {
-          statusDiv.textContent = "Netzwerkfehler. Bitte Seite neu laden.";
+          statusDiv.textContent = "Netzwerkfehler. Bitte Seite neu laden. [Cmd][r]";
           return;
         }
       }
