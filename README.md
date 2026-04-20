@@ -4,6 +4,8 @@ examples:
 
 https://einkilometer.github.io/strudel/z.html#z10
 
+https://einkilometer.github.io/strudel/z.html#z20
+
 
 
 complex:
@@ -22,18 +24,19 @@ https://github.com/einkilometer/strudel/blob/main/z.html
 
 https://github.com/einkilometer/strudel/blob/main/short.html
 
+
+
 show it raw:
 
 https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/s.html
 
 https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/short.html
 
-do do:
+https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/short.html
 
-A. Lege eine datei.txt im Ordner RAW an, die den strudel-content aus der Strudel-URL enthält.
 
-B. Verwende die RAW-URL der base64 kodierten datei.txt
+How To:
+
+Lege eine datei.txt im Ordner RAW an, die die Strudel-URL oder nur den Base64 codierten Teil der Strudel-URL enthält. 
 
 https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/datei.txt
-
-
