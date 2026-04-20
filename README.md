@@ -7,16 +7,9 @@ https://einkilometer.github.io/strudel/z.html#z10
 https://einkilometer.github.io/strudel/z.html#z20
 
 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-complex:
-
-https://einkilometer.github.io/strudel/s.html#260130
-
-https://einkilometer.github.io/strudel/z.html#z260127
-
-https://einkilometer.github.io/strudel/short.html#260130
-
-check the source: 
+Source: 
 
 https://github.com/einkilometer/strudel/blob/main/s.html
 
@@ -26,7 +19,7 @@ https://github.com/einkilometer/strudel/blob/main/short.html
 
 
 
-show it raw:
+Sourece raw:
 
 https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/s.html
 
@@ -35,8 +28,8 @@ https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/z.html
 https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/short.html
 
 
-How To:
+Hint:
 
-Lege eine datei.txt im Ordner RAW an, die die Strudel-URL oder nur den Base64 codierten Teil der Strudel-URL enthält. 
+Lege Dateien im Ordner RAW an, die eine Strudel-URL oder nur den Base64 codierten Teil der Strudel-URL enthält. 
 
 https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/datei.txt
