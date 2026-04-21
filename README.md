@@ -2,7 +2,7 @@
 
 examples: 
 
-//Ich möchte verstehen wie der Computer hier die Klänge produziert
+@Ich möchte verstehen wie der Computer hier die Klänge produziert
 
 https://einkilometer.github.io/strudel/z.html#z10
 
