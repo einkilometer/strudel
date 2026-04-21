@@ -6,7 +6,7 @@ examples:
 
 https://einkilometer.github.io/strudel/z.html#z10
 
-@original: "Amensister" by Felix Roos - https://creativecommons.org/licenses/by-nc-sa/4.0/
+@original: "Amensister" by Felix Roos
 
 https://einkilometer.github.io/strudel/z.html#z20
 
