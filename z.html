@@ -2,6 +2,8 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
+  <!-- 1. Added a default title so the page is never "Untitled" in history -->
+  <title>Shortlink Searcher</title>
 </head>
 <body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
   <div id="status"></div>
@@ -14,14 +16,17 @@
     async function startSearch() {
       const hash = location.hash.slice(1);
       
-      // --- UPDATE PAGE TITLE ---
-      // If there is a hash, update the browser tab title
+      // --- UPDATE PAGE TITLE AND HISTORY ---
+      let pageTitle = "-";
       if (hash) {
-        document.title = `#${hash}`;
-      } else {
-        document.title = "-";
+        pageTitle = `#${hash}`;
       }
-      // -------------------------
+      
+      document.title = pageTitle;
+      
+      // This tells the browser: "Save this specific title for this specific URL in history"
+      history.replaceState({ title: pageTitle }, pageTitle, window.location.href);
+      // -------------------------------------
 
       if (!hash || !hash.startsWith('z')) {
         statusDiv.innerHTML = `
@@ -90,7 +95,14 @@
       `;
 
       document.getElementById("retryBtn").onclick = () => {
-        location.hash = `z${lastNum + 1}`;
+        const nextHash = `z${lastNum + 1}`;
+        const nextTitle = `#${nextHash}`;
+        
+        // 2. Instead of just location.hash, we use pushState.
+        // This creates a NEW entry in the history list with its own title.
+        document.title = nextTitle;
+        history.pushState({ title: nextTitle }, nextTitle, `#${nextHash}`);
+        
         startSearch();
       };
     }
