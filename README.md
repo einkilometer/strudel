@@ -43,9 +43,14 @@ https://einkilometer.github.io/strudel/z.html#z90
 
 https://einkilometer.github.io/strudel/z.html#z100
 
-@extra: 
+@extra: drums
 
 https://einkilometer.github.io/strudel/z.html#z110
+
+extra: sounds
+
+https://einkilometer.github.io/strudel/z.html#z120
+
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
