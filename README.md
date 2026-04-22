@@ -1,6 +1,7 @@
 # Links to Strudel.cc #
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-examples: 
+Beispiele: 
 
 @Ich möchte verstehen wie der Computer hier die Klänge produziert
 
@@ -43,8 +44,8 @@ https://einkilometer.github.io/strudel/z.html#z90
 https://einkilometer.github.io/strudel/z.html#z100
 
 
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 
 About Strudel:
 
@@ -55,6 +56,8 @@ Source of "Amensister" by Felix Roos:
 
 https://shiyouganai.dev/strudel/examples/
 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 About this scripts: 
