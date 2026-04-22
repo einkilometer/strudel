@@ -17,9 +17,15 @@
       const hash = location.hash.slice(1);
       
       // --- UPDATE PAGE TITLE AND HISTORY ---
-      let pageTitle = "-";
+            const now = new Date();
+            const dateStr = now.toLocaleDateString();
+            const timeStr = now.toLocaleTimeString();
+
+            // Show the link and the timestamp
+      let pageTitle = `-  ${dateStr}, ${timeStr}`;
       if (hash) {
-        pageTitle = `#${hash}`;
+
+        pageTitle = `#${hash} - ${dateStr}, ${timeStr}`;
       }
       
       document.title = pageTitle;
@@ -61,7 +67,17 @@
             if (content.includes('#')) {
               content = content.slice(content.indexOf('#') + 1);
             }
-            statusDiv.textContent = `Gefunden! Leite weiter...`;
+//            statusDiv.textContent = `Gefunden! Leite weiter...`;
+            const now = new Date();
+            const dateStr = now.toLocaleDateString();
+            const timeStr = now.toLocaleTimeString();
+
+            // Show the link and the timestamp
+            statusDiv.innerHTML = `
+              <p><strong>Gefunden!</strong> ${dateStr}, ${timeStr}</p>
+              <p>Leite weiter...</p>
+              <a href="${window.location.href}">${window.location.href}</a>
+            `;
             location.href = "https://strudel.cc/#" + content; 
             return; 
           } else {
