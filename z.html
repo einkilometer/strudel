@@ -2,7 +2,6 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <title>Shortlink Searcher</title>
 </head>
 <body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
   <div id="status"></div>
@@ -18,9 +17,9 @@
       // --- UPDATE PAGE TITLE ---
       // If there is a hash, update the browser tab title
       if (hash) {
-        document.title = `Shortlink Searcher - ${hash}`;
+        document.title = `#${hash}`;
       } else {
-        document.title = "Shortlink Searcher";
+        document.title = "-";
       }
       // -------------------------
 
