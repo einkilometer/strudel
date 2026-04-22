@@ -22,10 +22,10 @@
             const timeStr = now.toLocaleTimeString();
 
             // Show the link and the timestamp
-      let pageTitle = `-  ${dateStr}, ${timeStr}`;
+      let pageTitle = `- ${timeStr} ${dateStr}`;
       if (hash) {
 
-        pageTitle = `#${hash} - ${dateStr}, ${timeStr}`;
+        pageTitle = `#${hash} - ${timeStr} ${dateStr}`;
       }
       
       document.title = pageTitle;
@@ -76,7 +76,7 @@
             statusDiv.innerHTML = `
               <p><strong>Gefunden!</strong> ${dateStr}, ${timeStr}</p>
               <p>Leite weiter...</p>
-              <a href="${window.location.href}">${window.location.href}</a>
+              <a href="${window.location.href}">https://strudel.cc/#${content}</a>
             `;
             location.href = "https://strudel.cc/#" + content; 
             return; 
