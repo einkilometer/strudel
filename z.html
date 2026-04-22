@@ -74,14 +74,10 @@
             document.title = finalTitle;
 
             statusDiv.innerHTML = `
-              <p>[Strg]+[r] [Cmd]+[r] [Ctrl]+[r] weiter ... #z${currentNum}</p>
-
+              [Strg]+[r] [Cmd]+[r] [Ctrl]+[r] weiter ... #z${currentNum}
               <a href="https://strudel.cc/#${content}">${window.location.href}</a>
-              <br>
               <canvas id="qr-canvas"></canvas>
-              <center>${foundTimestamp}</center>
-
-
+              ${foundTimestamp}
             `;
 
             new QRious({
