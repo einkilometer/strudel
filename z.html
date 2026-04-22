@@ -74,11 +74,13 @@
             document.title = finalTitle;
 
             statusDiv.innerHTML = `
-              <center>#z${currentNum} ${foundTimestamp}</center>
+              <p>[Strg]+[r] [Cmd]+[r] [Ctrl]+[r] weiter ... #z${currentNum}</p>
+
               <a href="https://strudel.cc/#${content}">${window.location.href}</a>
               <br>
               <canvas id="qr-canvas"></canvas>
-              <p>[Strg]+[r] [Cmd]+[r] [Ctrl]+[r] weiter...</p>
+              <center>${foundTimestamp}</center>
+
 
             `;
 
