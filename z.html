@@ -6,30 +6,29 @@
 </head>
 <body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
   <div id="status"></div>
-
   <script>
-    // Essential Variables
     const baseURL = "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/";
     const statusDiv = document.getElementById("status");
     
-    // Helper for random pause (2-4 seconds)
     const wait = () => new Promise(res => setTimeout(res, Math.random() * 2000 + 2000));
 
     async function startSearch() {
       const hash = location.hash.slice(1);
       
-      // Your updated title logic
+      // --- UPDATE PAGE TITLE ---
+      // If there is a hash, update the browser tab title
       if (hash) {
-        document.title = `#${hash} - ${window.location.href}`;
+        document.title = `Shortlink Searcher - ${hash}`;
       } else {
-        document.title = "-";
+        document.title = "Shortlink Searcher";
       }
+      // -------------------------
 
       if (!hash || !hash.startsWith('z')) {
         statusDiv.innerHTML = `
           <h1 style='font-family:sans-serif;'>404</h1>      
           <a href="https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/README.md">README.md</a>
-        `;
+          `;
         return;
       }
 
@@ -39,7 +38,7 @@
         statusDiv.innerHTML = `
           <h1 style='font-family:sans-serif;'>404</h1>      
           <a href="https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/README.md">README.md</a>
-        `;
+          `;
         return;
       }
 
@@ -58,22 +57,7 @@
             if (content.includes('#')) {
               content = content.slice(content.indexOf('#') + 1);
             }
-
-            // Date and Time logic
-            const now = new Date();
-            const dateStr = now.toLocaleDateString();
-            const timeStr = now.toLocaleTimeString();
-
-            // Show the link and the timestamp
-            statusDiv.innerHTML = `
-              <p><strong>Gefunden!</strong> ${dateStr}, ${timeStr}</p>
-              <p>Leite weiter...</p>
-              <a href="${window.location.href}">${window.location.href}</a>
-            `;
-
-            // Wait 1.5 seconds so the user sees the link
-            await new Promise(res => setTimeout(res, 1500)); 
-
+            statusDiv.textContent = `Gefunden! Leite weiter...`;
             location.href = "https://strudel.cc/#" + content; 
             return; 
           } else {
@@ -91,6 +75,7 @@
           return;
         }
       }
+
       showRetryButton(currentNum - 1);
     }
 
@@ -111,7 +96,6 @@
       };
     }
 
-    // Initial call to start the process
     startSearch();
   </script>
 </body>
