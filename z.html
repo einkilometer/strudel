@@ -10,13 +10,20 @@
     const baseURL = "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/";
     const statusDiv = document.getElementById("status");
     
-    // Helper for random pause
     const wait = () => new Promise(res => setTimeout(res, Math.random() * 2000 + 2000));
 
     async function startSearch() {
-      // --- MOVED INSIDE: Read the hash every time the function starts ---
       const hash = location.hash.slice(1);
       
+      // --- UPDATE PAGE TITLE ---
+      // If there is a hash, update the browser tab title
+      if (hash) {
+        document.title = `Shortlink Searcher - ${hash}`;
+      } else {
+        document.title = "Shortlink Searcher";
+      }
+      // -------------------------
+
       if (!hash || !hash.startsWith('z')) {
         statusDiv.innerHTML = `
           <h1 style='font-family:sans-serif;'>404</h1>      
@@ -84,15 +91,11 @@
       `;
 
       document.getElementById("retryBtn").onclick = () => {
-        // 1. Change the hash (this creates a new entry in browser history)
         location.hash = `z${lastNum + 1}`;
-        
-        // 2. Call the search function again WITHOUT reloading the page
         startSearch();
       };
     }
 
-    // Start the first search on page load
     startSearch();
   </script>
 </body>
