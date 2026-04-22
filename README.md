@@ -38,7 +38,7 @@ https://einkilometer.github.io/strudel/z.html#z80
 
 https://einkilometer.github.io/strudel/z.html#z90
 
-@todo
+@todo: stack cat and pick
 
 https://einkilometer.github.io/strudel/z.html#z100
 
@@ -49,6 +49,12 @@ https://einkilometer.github.io/strudel/z.html#z100
 About Strudel:
 
 https://strudel.cc/de/workshop/getting-started/
+
+
+Source of "Amensister" by Felix Roos:
+
+https://shiyouganai.dev/strudel/examples/
+
 
 
 About this scripts: 
