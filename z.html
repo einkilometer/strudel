@@ -2,9 +2,9 @@ async function startSearch() {
   const hash = location.hash.slice(1);
   
   if (hash) {
-    document.title = `Shortlink Searcher - ${hash}`;
+    document.title = `${hash} - ${window.location.href}`;
   } else {
-    document.title = "Shortlink Searcher";
+    document.title = "-";
   }
 
   if (!hash || !hash.startsWith('z')) {
