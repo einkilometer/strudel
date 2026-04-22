@@ -76,7 +76,7 @@
             statusDiv.innerHTML = `
               <p><strong>Gefunden!</strong> ${dateStr}, ${timeStr}</p>
               <p>Leite weiter...</p>
-              <a href="${window.location.href}">https://strudel.cc/#${content}</a>
+              <a href="https://strudel.cc/#${content}">${window.location.href}</a>
             `;
             location.href = "https://strudel.cc/#" + content; 
             return; 
