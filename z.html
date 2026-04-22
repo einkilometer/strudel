@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Shortlink Searcher</title>
-  <!-- LOCAL QR GENERATOR LIBRARY -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <!-- Lokal gehostete QR-Library -->
+  <script src="qrious.min.js"></script>
 </head>
 <body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
   <div id="status"></div>
@@ -14,13 +14,31 @@
     const statusDiv = document.getElementById("status");
     const wait = () => new Promise(res => setTimeout(res, Math.random() * 2000 + 2000));
 
+    // --- HILFSFUNKTION für Datum und Zeit ---
+    function getFormattedNow() {
+      const now = new Date();
+      const pad = (num) => String(num).padStart(2, '0');
+      const day = pad(now.getDate());
+      const month = pad(now.getMonth() + 1);
+      const year = String(now.getFullYear()).slice(-2);
+      const hours = pad(now.getHours());
+      const mins = pad(now.getMinutes());
+      return `${hours}:${mins} ${day}.${month}.${year}`;
+    }
+    // ---------------------------------------
+
     async function startSearch() {
       const hash = location.hash.slice(1);
+      const timestamp = getFormattedNow(); // Aktuelle Zeit holen
       
+      // --- TITEL UPDATE MIT ZEITSTEMPEL ---
       let pageTitle = "-";
-      if (hash) { pageTitle = `#${hash}`; }
+      if (hash) { 
+        pageTitle = `#${hash} ${timestamp}`; 
+      }
       document.title = pageTitle;
       history.replaceState({ title: pageTitle }, pageTitle, window.location.href);
+      // -------------------------------------
 
       if (!hash || !hash.startsWith('z')) {
         statusDiv.innerHTML = `<h1 style='font-family:sans-serif;'>404</h1><a href="https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/README.md">README.md</a>`;
@@ -49,23 +67,25 @@
               content = content.slice(content.indexOf('#') + 1);
             }
 
-            const now = new Date();
-            const dateStr = now.toLocaleDateString();
-            const timeStr = now.toLocaleTimeString();
+            const foundTimestamp = getFormattedNow(); // Zeit zum Zeitpunkt des Fundes
+            
+            // Titel beim Finden nochmal aktualisieren
+            const finalTitle = `#z${currentNum} ${foundTimestamp}`;
+            document.title = finalTitle;
 
             statusDiv.innerHTML = `
-              <p><big>#z${currentNum}</big> ${timeStr} ${dateStr}</p>
-              <p>[C__] [r] weiter...</p>
+              <p><big>#z${currentNum}</big> ${foundTimestamp}</p>
               <a href="https://strudel.cc/#${content}">${window.location.href}</a>
               <br><br>
               <canvas id="qr-canvas"></canvas>
+              <p>[Strg]+[r] [Cmd]+[r] [Ctrl]+[r] weiter...</p>
+
             `;
 
-            // Generate QR code locally
             new QRious({
               element: document.getElementById('qr-canvas'),
               value: window.location.href,
-              size: 450
+              size: 150
             });
 
             await new Promise(res => setTimeout(res, 3000)); 
@@ -100,7 +120,9 @@
       `;
       document.getElementById("retryBtn").onclick = () => {
         const nextHash = `z${lastNum + 1}`;
-        const nextTitle = `#${nextHash}`;
+        const nextTimestamp = getFormattedNow();
+        const nextTitle = `#${nextHash} ${nextTimestamp}`;
+        
         document.title = nextTitle;
         history.pushState({ title: nextTitle }, nextTitle, `#${nextHash}`);
         startSearch();
