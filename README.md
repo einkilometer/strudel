@@ -1,8 +1,22 @@
 # Links to Strudel.cc #
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-Beispiele: 
+@Edits von am Zukunftstag entstandenem Strudel-Code:
 
+https://einkilometer.github.io/strudel/z.html#z130
+
+https://einkilometer.github.io/strudel/z.html#z140
+
+https://einkilometer.github.io/strudel/z.html#z150
+
+https://einkilometer.github.io/strudel/z.html#z160
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+Beispielablauf Strudel:
+ 
 @Ich möchte verstehen wie der Computer hier die Klänge produziert
 
 https://einkilometer.github.io/strudel/z.html#z10
@@ -50,19 +64,6 @@ https://einkilometer.github.io/strudel/z.html#z110
 @extra on: on drums and sounds
 
 https://einkilometer.github.io/strudel/z.html#z120
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-@Edits von am Zukunftstag entstandenem:
-
-https://einkilometer.github.io/strudel/z.html#z130
-
-https://einkilometer.github.io/strudel/z.html#z140
-
-https://einkilometer.github.io/strudel/z.html#z150
-
-https://einkilometer.github.io/strudel/z.html#z160
-
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
