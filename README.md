@@ -51,6 +51,18 @@ https://einkilometer.github.io/strudel/z.html#z110
 
 https://einkilometer.github.io/strudel/z.html#z120
 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@Edits von am Zukunftstag entstandenem:
+
+https://einkilometer.github.io/strudel/z.html#z130
+
+https://einkilometer.github.io/strudel/z.html#z140
+
+https://einkilometer.github.io/strudel/z.html#z150
+
+https://einkilometer.github.io/strudel/z.html#z160
+
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
