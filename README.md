@@ -61,9 +61,11 @@ https://einkilometer.github.io/strudel/z.html#z100
 
 https://einkilometer.github.io/strudel/z.html#z110
 
-@extra on: on drums and sounds
+@extra on: on numbers
 
 https://einkilometer.github.io/strudel/z.html#z120
+
+@extra on: on sound of wind
 
 https://einkilometer.github.io/strudel/z.html#z220
 
