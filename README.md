@@ -25,7 +25,7 @@ https://einkilometer.github.io/strudel/z.html#z10
 
 https://einkilometer.github.io/strudel/z.html#z20
 
-@here: focus on .sound("amencutup") 
+@here: focus on .sound("amencutup") (new)
 
 https://einkilometer.github.io/strudel/z.html#z30
 
