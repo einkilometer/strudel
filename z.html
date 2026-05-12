@@ -76,7 +76,7 @@
             content = content.trim(); 
             if (content.includes('#')) {
               let newdest = content.slice(0, content.indexOf('#'));
-	      if (newdest.length() > destination.length()) {
+	      if (newdest.length > destination.length) {
 		destination = newdest;
 	      }
               content = content.slice(content.indexOf('#') + 1);
