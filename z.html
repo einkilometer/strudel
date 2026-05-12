@@ -75,7 +75,7 @@
             let content = await response.text();
             content = content.trim(); 
             if (content.includes('#')) {
-              let newdest = content.slice(0, content.indexOf('#')+1);
+              let newdest = content.slice(0, content.indexOf('#')+2);
 	      if (newdest.length > destination.length) {
 		destination = newdest;
 	      }
