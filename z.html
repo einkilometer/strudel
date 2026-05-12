@@ -23,7 +23,8 @@
     const baseURL = "https://raw.githubusercontent.com/einkilometer/strudel/refs/heads/main/raw/";
     const statusDiv = document.getElementById("status");
     const wait = () => new Promise(res => setTimeout(res, Math.random() * 2000 + 2000));
-
+    let destination = "https://strudel.cc/#";
+ 
     // --- HILFSFUNKTION für Datum und Zeit ---
     function getFormattedNow() {
       const now = new Date();
@@ -74,6 +75,10 @@
             let content = await response.text();
             content = content.trim(); 
             if (content.includes('#')) {
+              let newdest = content.slice(0, content.indexOf('#'));
+	      if newdest.length() > destination.length() {
+		destination = newdest;
+	      }
               content = content.slice(content.indexOf('#') + 1);
             }
 
@@ -96,7 +101,7 @@
             });
 
             await new Promise(res => setTimeout(res, 3000)); 
-            location.href = "https://strudel.cc/#" + content; 
+            location.href = destination + content; 
             return; 
           } else {
             attempts++;
