@@ -76,21 +76,19 @@
             content = content.trim(); 
             if (content.includes('#')) {
               let newdest = content.slice(0, content.indexOf('#')+1);
-	      if (newdest.length > destination.length) {
-		destination = newdest;
-	      }
+      	      if (newdest.length > destination.length) {
+      		        destination = newdest;
+      	      }
               content = content.slice(content.indexOf('#') + 1);
             }
-
             const foundTimestamp = getFormattedNow(); // Zeit zum Zeitpunkt des Fundes
-            
             // Titel beim Finden nochmal aktualisieren
             const finalTitle = `#z${currentNum} ${foundTimestamp}`;
             document.title = finalTitle;
-
+            let base_href = window.location.href.slice(0, window.location.href.indexOf('#')+1)
             statusDiv.innerHTML = `
-              <div><a href="https://strudel.cc/#${content}">${window.location.href}</a></div>
-	      <canvas id="qr-canvas"></canvas>
+              <div><a href="https://strudel.cc/#${content}">${base_href}z${currentNum}</a></div>
+	            <canvas id="qr-canvas"></canvas>
               <br>[Strg]+[r] [Cmd]+[r] [Ctrl]+[r] weiter ... #z${currentNum}
             `;
 
