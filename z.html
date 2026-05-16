@@ -63,7 +63,7 @@
       }
 
       let attempts = 0;
-      const maxAttempts = 5;
+      const maxAttempts = 10;
 
       while (attempts < maxAttempts) {
         const fileName = `z${currentNum}.txt`;
@@ -75,7 +75,7 @@
             let content = await response.text();
             content = content.trim(); 
             if (content.includes('#')) {
-              let newdest = content.slice(0, content.indexOf('#')+2);
+              let newdest = content.slice(0, content.indexOf('#')+1);
 	      if (newdest.length > destination.length) {
 		destination = newdest;
 	      }
@@ -100,7 +100,7 @@
               size: 400
             });
 
-            await new Promise(res => setTimeout(res, 3000)); 
+            await new Promise(res => setTimeout(res, 1000)); 
             location.href = destination + content; 
             return; 
           } else {
