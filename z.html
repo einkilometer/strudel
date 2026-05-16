@@ -85,7 +85,7 @@
             // Titel beim Finden nochmal aktualisieren
             const finalTitle = `#z${currentNum} ${foundTimestamp}`;
             document.title = finalTitle;
-            let base_href = window.location.href.slice(0, window.location.href.indexOf('#')+1)
+            let base_href = window.location.href.slice(0, window.location.href.indexOf('#')+1);
             statusDiv.innerHTML = `
               <div><a href="https://strudel.cc/#${content}">${base_href}z${currentNum}</a></div>
 	            <canvas id="qr-canvas"></canvas>
