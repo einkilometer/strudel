@@ -2,19 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <title>Shortlink Searcher</title>
-  <!-- Lokal gehostete QR-Library -->
-  <style>
-    a {
-      color: black;
-      text-decoration: underline;
-    }
-    /* Optional: makes the link a slightly different shade when hovered */
-    a:hover {
-      color: #333;
-    }
-  </style>
-  <script src="qrious.min.js"></script>
+  <title></title>
 </head>
 <body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
   <div id="status"></div>
@@ -81,24 +69,15 @@
       	      }
               content = content.slice(content.indexOf('#') + 1);
             }
-            const foundTimestamp = getFormattedNow(); // Zeit zum Zeitpunkt des Fundes
+            // Zeit zum Zeitpunkt des Fundes
+            const foundTimestamp = getFormattedNow(); 
             // Titel beim Finden nochmal aktualisieren
             const finalTitle = `#z${currentNum} ${foundTimestamp}`;
             document.title = finalTitle;
             let base_href = window.location.href.slice(0, window.location.href.indexOf('#')+1);
-            statusDiv.innerHTML = `
-              <div><a href="https://strudel.cc/#${content}">${base_href}z${currentNum}</a></div>
-	            <canvas id="qr-canvas"></canvas>
-              <br>[Strg]+[r] [Cmd]+[r] [Ctrl]+[r] weiter ... #z${currentNum}
-            `;
-
-            new QRious({
-              element: document.getElementById('qr-canvas'),
-              value: window.location.href,
-              size: 400
-            });
-
-            await new Promise(res => setTimeout(res, 5000)); 
+            statusDiv.innerHTML = `<div><a href="https://strudel.cc/#${content}">${base_href}z${currentNum}</a></div>
+                                   <br>    [Cmd]+[r] [Ctrl]+[r] `;
+            // await new Promise(res => setTimeout(res, 5000)); 
             location.href = destination + content; 
             return; 
           } else {
@@ -111,7 +90,7 @@
           }
         } catch (error) {
           console.error(error);
-          statusDiv.textContent = "Ein Fehler ist aufgetreten. Bitte Seite neu laden.";
+          statusDiv.textContent = "Ein Fehler ist aufgetreten. Bitte Seite neu laden. [Cmd]+[r] [Ctrl]+[r] ";
           return;
         }
       }
