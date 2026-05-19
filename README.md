@@ -43,9 +43,9 @@ https://einkilometer.github.io/strudel/z.html#z160
 
 @next beat patterns   ______________________________ https://einkilometer.github.io/strudel/z.html#z300
 
-@next sometime speed   _____________________________ https://einkilometer.github.io/strudel/z.html#z301
+@next sometime speed     ___________________________ https://einkilometer.github.io/strudel/z.html#z301
 
-@reset the stack     _______________________________ https://einkilometer.github.io/strudel/z.html#z310
+@reset the stack   _________________________________ https://einkilometer.github.io/strudel/z.html#z310
 
 @now javaScript style   ____________________________ https://einkilometer.github.io/strudel/z.html#z260129
 
