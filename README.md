@@ -19,7 +19,7 @@ https://einkilometer.github.io/strudel/z.html#z160
 
 @original: "Amensister" by Felix Roos- - - - - - https://einkilometer.github.io/strudel/z.html#z20
 
-@here focus on .sound("amencutup") (new) - - - - https://einkilometer.github.io/strudel/z.html#z30
+@here focus on .sound("amencutup") - - - - - - - https://einkilometer.github.io/strudel/z.html#z30
 
 @next only the bass- - - - - - - - - - - - - - - https://einkilometer.github.io/strudel/z.html#z40
 
