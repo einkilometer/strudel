@@ -19,11 +19,11 @@ https://einkilometer.github.io/strudel/z.html#z160
 
 @original: "Amensister" by Felix Roos ______________ https://einkilometer.github.io/strudel/z.html#z20
 
-@here focus on .sound("amencutup") _________________ https://einkilometer.github.io/strudel/z.html#z30
+@here focus on .sound("amencutup")    ______________ https://einkilometer.github.io/strudel/z.html#z30
 
-@next only the bass ________________________________ https://einkilometer.github.io/strudel/z.html#z40
+@next only the bass    _____________________________ https://einkilometer.github.io/strudel/z.html#z40
 
-@change to focus on chord __________________________ https://einkilometer.github.io/strudel/z.html#z50
+@change to focus on chord    _______________________ https://einkilometer.github.io/strudel/z.html#z50
 
 @next only the alien breath ________________________ https://einkilometer.github.io/strudel/z.html#z60
 
