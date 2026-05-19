@@ -17,7 +17,7 @@ https://einkilometer.github.io/strudel/z.html#z160
 
 @how does my Computer produce sounds live ______ https://einkilometer.github.io/strudel/z.html#z10
 
-@original: "Amensister" by Felix Roos __________ https://einkilometer.github.io/strudel/z.html#z20
+@original: "Amensister" by Felix Roos ______________ https://einkilometer.github.io/strudel/z.html#z20
 
 @here focus on .sound("amencutup") - - - - - - - https://einkilometer.github.io/strudel/z.html#z30
 
