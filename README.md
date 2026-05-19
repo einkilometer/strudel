@@ -15,9 +15,6 @@ https://einkilometer.github.io/strudel/z.html#z160
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-Beispielablauf Strudel:
- 
-
 @how does my Computer produce sounds live- - - - https://einkilometer.github.io/strudel/z.html#z10
 
 @original: "Amensister" by Felix Roos- - - - - - https://einkilometer.github.io/strudel/z.html#z20
