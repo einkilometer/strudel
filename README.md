@@ -29,23 +29,23 @@ https://einkilometer.github.io/strudel/z.html#z160
 
 @hear sound east    ________________________________ https://einkilometer.github.io/strudel/z.html#z70
 
-@hear reset    _____________________________________ https://einkilometer.github.io/strudel/z.html#z80
+@hear reset     ____________________________________ https://einkilometer.github.io/strudel/z.html#z80
 
-@hear reset stack   ________________________________ https://einkilometer.github.io/strudel/z.html#z90
+@hear reset stack     ______________________________ https://einkilometer.github.io/strudel/z.html#z90
 
 @todo stack cat and pick   _________________________ https://einkilometer.github.io/strudel/z.html#z100
 
-@focus on drum machines    _________________________ https://einkilometer.github.io/strudel/z.html#z110
+@focus on drum machines     ________________________ https://einkilometer.github.io/strudel/z.html#z110
 
-@extra on numbers    _______________________________ https://einkilometer.github.io/strudel/z.html#z120
+@extra on numbers     ______________________________ https://einkilometer.github.io/strudel/z.html#z120
 
 @extra on sound of wind   __________________________ https://einkilometer.github.io/strudel/z.html#z220
 
 @next beat patterns   ______________________________ https://einkilometer.github.io/strudel/z.html#z300
 
-@soundfiles from online sources   __________________ https://einkilometer.github.io/strudel/z.html#z220
+@soundfiles from online sources  ___________________ https://einkilometer.github.io/strudel/z.html#z220
 
-@now javaScript style  ____________________________ https://einkilometer.github.io/strudel/z.html#z260129
+@now javaScript style    ___________________________ https://einkilometer.github.io/strudel/z.html#z260129
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
