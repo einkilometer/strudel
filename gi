@@ -1,4 +1,5 @@
-! test $2 && cp $1 $1-$(date "+%Y%m%d-%H%M") 
+! test bak && mkdir bak
+! test $2 && cp $1 bak/$1-$(date "+%Y%m%d-%H%M") 
 test $2 && mv $1 $1-$(date "+%Y%m%d-%H%M")
 nano $1
 echo
