@@ -17,19 +17,18 @@ https://einkilometer.github.io/strudel/z.html#z160
 
 Beispielablauf Strudel:
  
-@Ich möchte verstehen wie der Computer hier die Klänge produziert
-
 https://einkilometer.github.io/strudel/z.html#z10
 
-@original: "Amensister" by Felix Roos
+@Ich möchte verstehen wie der Computer hier die Klänge produziert
 
-https://einkilometer.github.io/strudel/z.html#z20
+
+@original: "Amensister" by Felix Roos- - - - - - https://einkilometer.github.io/strudel/z.html#z20
 
 @here focus on .sound("amencutup") (new) - - - - https://einkilometer.github.io/strudel/z.html#z30
 
 @next only the bass- - - - - - - - - - - - - - - https://einkilometer.github.io/strudel/z.html#z40
 
-@change to focus on chord - - - - - - - - - - - - https://einkilometer.github.io/strudel/z.html#z50
+@change to focus on chord- - - - - - - - - - - - https://einkilometer.github.io/strudel/z.html#z50
 
 @next only the alien breath- - - - - - - - - - - https://einkilometer.github.io/strudel/z.html#z60
 
