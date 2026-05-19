@@ -25,27 +25,27 @@ https://einkilometer.github.io/strudel/z.html#z160
 
 @change to focus on chord    _______________________ https://einkilometer.github.io/strudel/z.html#z50
 
-@next only the alien breath ________________________ https://einkilometer.github.io/strudel/z.html#z60
+@next only the alien breath  _______________________ https://einkilometer.github.io/strudel/z.html#z60
 
-@hear sound east ___________________________________ https://einkilometer.github.io/strudel/z.html#z70
+@hear sound east    ________________________________ https://einkilometer.github.io/strudel/z.html#z70
 
-@hear reset ________________________________________ https://einkilometer.github.io/strudel/z.html#z80
+@hear reset    _____________________________________ https://einkilometer.github.io/strudel/z.html#z80
 
-@hear reset stack __________________________________ https://einkilometer.github.io/strudel/z.html#z90
+@hear reset stack   ________________________________ https://einkilometer.github.io/strudel/z.html#z90
 
-@todo stack cat and pick ___________________________ https://einkilometer.github.io/strudel/z.html#z100
+@todo stack cat and pick   _________________________ https://einkilometer.github.io/strudel/z.html#z100
 
-@focus on drum machines ____________________________ https://einkilometer.github.io/strudel/z.html#z110
+@focus on drum machines    _________________________ https://einkilometer.github.io/strudel/z.html#z110
 
-@extra on numbers __________________________________ https://einkilometer.github.io/strudel/z.html#z120
+@extra on numbers    _______________________________ https://einkilometer.github.io/strudel/z.html#z120
 
-@extra on sound of wind ____________________________ https://einkilometer.github.io/strudel/z.html#z220
+@extra on sound of wind   __________________________ https://einkilometer.github.io/strudel/z.html#z220
 
-@next beat patterns ________________________________ https://einkilometer.github.io/strudel/z.html#z300
+@next beat patterns   ______________________________ https://einkilometer.github.io/strudel/z.html#z300
 
-@soundfiles from online sources ____________________ https://einkilometer.github.io/strudel/z.html#z220
+@soundfiles from online sources   __________________ https://einkilometer.github.io/strudel/z.html#z220
 
-@now javaScript style ______________________________ https://einkilometer.github.io/strudel/z.html#z260129
+@now javaScript style  ____________________________ https://einkilometer.github.io/strudel/z.html#z260129
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
