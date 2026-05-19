@@ -17,10 +17,8 @@ https://einkilometer.github.io/strudel/z.html#z160
 
 Beispielablauf Strudel:
  
-https://einkilometer.github.io/strudel/z.html#z10
 
-@Ich möchte verstehen wie der Computer hier die Klänge produziert
-
+@how does the Computer produce Klang live- - - - https://einkilometer.github.io/strudel/z.html#z10
 
 @original: "Amensister" by Felix Roos- - - - - - https://einkilometer.github.io/strudel/z.html#z20
 
