@@ -47,7 +47,7 @@ https://einkilometer.github.io/strudel/z.html#z160
 
 @reset the stack   _________________________________ https://einkilometer.github.io/strudel/z.html#z310
 
-@now javaScript style   ____________________________ https://einkilometer.github.io/strudel/z.html#z260129
+@let javaScript  ______ ____________________________ https://einkilometer.github.io/strudel/z.html#z260129
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
