@@ -39,11 +39,13 @@ https://einkilometer.github.io/strudel/z.html#z160
 
 @extra on numbers     ______________________________ https://einkilometer.github.io/strudel/z.html#z120
 
-@extra on sound of wind   __________________________ https://einkilometer.github.io/strudel/z.html#z220
+@soundfiles from online sources  ___________________ https://einkilometer.github.io/strudel/z.html#z220
 
 @next beat patterns   ______________________________ https://einkilometer.github.io/strudel/z.html#z300
 
-@soundfiles from online sources  ___________________ https://einkilometer.github.io/strudel/z.html#z220
+@next sometime speed   _____________________________ https://einkilometer.github.io/strudel/z.html#z301
+
+@reset the stack     _______________________________ https://einkilometer.github.io/strudel/z.html#z310
 
 @now javaScript style   ____________________________ https://einkilometer.github.io/strudel/z.html#z260129
 
