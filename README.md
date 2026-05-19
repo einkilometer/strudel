@@ -27,11 +27,11 @@ https://einkilometer.github.io/strudel/z.html#z160
 
 @next only the alien breath  _______________________ https://einkilometer.github.io/strudel/z.html#z60
 
-@hear sound east    ________________________________ https://einkilometer.github.io/strudel/z.html#z70
+@hear sound east     _______________________________ https://einkilometer.github.io/strudel/z.html#z70
 
 @hear reset     ____________________________________ https://einkilometer.github.io/strudel/z.html#z80
 
-@hear reset stack     ______________________________ https://einkilometer.github.io/strudel/z.html#z90
+@hear reset stack    _______________________________ https://einkilometer.github.io/strudel/z.html#z90
 
 @todo stack cat and pick   _________________________ https://einkilometer.github.io/strudel/z.html#z100
 
@@ -45,7 +45,7 @@ https://einkilometer.github.io/strudel/z.html#z160
 
 @soundfiles from online sources  ___________________ https://einkilometer.github.io/strudel/z.html#z220
 
-@now javaScript style    ___________________________ https://einkilometer.github.io/strudel/z.html#z260129
+@now javaScript style   ____________________________ https://einkilometer.github.io/strudel/z.html#z260129
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
